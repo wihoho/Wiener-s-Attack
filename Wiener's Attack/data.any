@@ -1,0 +1,69 @@
+This file contains 10391 bytes, all of which are being used in the computation of the SHA-1 hash value for use in the digital signature. So even a change of 1 bit in this file would invalidate the signature because it would result in a very different hash value.
+
+so beware of the hidden change in file content when it is opened by many software including the Microsoft Ofice Suite of software!
+
+Security concern far more than cryptography although cryptography is an important topic w.r.t. network security. There is also theoretical foundation and practical issues as this assignment reflect. There has been many practical misuse in the history of cryptography, here is an example:
+
+extract from:
+
+"The Misuse of RC4 in Microsoft Word and Excel" in by 
+Hongjun Wu of ASTAR.
+
+For the implementation of stream ciphers, the basic principle is that if the
+same key is used for more than once, different initialization vectors should be
+used to prevent the same keystream from being used to encrypt more than one
+message. When the stream cipher is used in the data transmission, normally
+people would follow this principle strictly. However, in the environment where
+the document needs to be edited and modified, such principle may be forgotten.
+This kind of mistake takes place in the Microsoft Office (Word and Excel)
+encryption – the same key and the same initialization vector are allowed to encrypt
+different versions of a document. This happens as follows. We encrypt a
+Microsoft Office (Word or Excel) document with a password and save that file.
+Later that document is modified and being saved again. In this process, the
+key and initialization vector remain unchanged, so the same keystream is used
+to protect two different versions (the original and the modified versions) of the
+documents. By XORing those two versions, we could obtain a lot of information
+about the document.
+
+The above attack could take place in real life. Suppose that Alice and Bob
+are working on the same Microsoft Office (Word or Excel) document. They share
+the same password and use that password to protect the document. They would
+make changes to the document and the document is encrypted and transmitted
+between them for a number of times. In this process, the same password and
+initialization vector are used to protect all the modified versions of that document
+and the document could be easily recovered from those intercepted files with high
+chance.
+
+Here is another example. Suppose that Alice is working on a Microsoft Office
+document (Word and Excel) and she uses a password to protect it. During the
+process, Alice may need to backup her files. An attacker could retrieve a lot
+of information from those backup files even though the attacker does not know
+Alice’s password.
+
+for more details, visit http://icsd.i2r.a-star.edu.sg/staff/hongjun/msoffice/...  
+
+However, cryptography is not the only way to maintain information confidentiality, steganography is another way though it cannot replace cryptography. However, when it is feasibly combined with cryptography, the result may be a headache for law enforcements.
+ 
+Steganography as Extract from Wikipedia:
+
+Steganography is the art and science of writing hidden messages in such a way that no one apart from the intended recipient knows of the existence of the message; this is in contrast to cryptography, where the existence of the message itself is not disguised, but the content is obscured. With the advent of digital media, steganography has come to include the hiding of digital information within digital files. For example, the color value of every 100th pixel within a digital image could represent a letter in the alphabet.
+
+The word steganography is of Greek origin and means "covered, or hidden writing". Its ancient origins can be traced back to 440 BC. Herodotus mentions two examples of steganography in The Histories of Herodotus [1]. Demeratus sent a warning about a forthcoming attack to Greece by writing it on a wooden panel and covering it in wax. Wax tablets were in common use then as re-usable writing surface, sometimes used for shorthand. Another ancient example is that of Histiaeus, who shaved the head of his most trusted slave and tattooed a message on it. After his hair had grown the message was hidden. The purpose was to instigate a revolt against the Persians. Later, Johannes Trithemius's book Steganographia is a treatise on cryptography and steganography disguised as a book on black magic.
+
+Generally, a steganographic message will appear to be something else: a picture, an article, a shopping list, or some other message. This apparent message is the covertext. For instance, a message may be hidden by using invisible ink between the visible lines of innocuous documents.
+The advantage of steganography over cryptography alone is that messages do not attract attention to themselves, to messengers, or to recipients. An unhidden coded message, no matter how unbreakable it is, will arouse suspicion and may in itself be incriminating, as in countries where encryption is illegal.[2] Oftentimes, steganography and cryptography are used together to ensure security of the covert message.
+
+Digital water marking is predominantly a steganography based technique, some watermark data/information is embedded in an image or an audio file (e.g.MP3)in an un-noticeable fashion by the original author. When the need arise, he/she can extract the water-mark from the file using some standard algorithm and a trap-door information to convinced an arbitrator of his/her intellectual ownership. Typically cryptographically encrypted data becomes unrecoverable after a lossy compression but a water-mark is likely to survive a lossy compression.
+
+
+IDS as Extract from Wikipedia:
+
+An intrusion detection system (IDS) generally detects unwanted manipulations to computer systems, mainly through the Internet. The manipulations may take the form of attacks by crackers.
+An intrusion detection system is used to detect many types of malicious network traffic and computer usage that can't be detected by a conventional firewall. This includes network attacks against vulnerable services, data driven attacks on applications, host based attacks such as privilege escalation, unauthorized logins and access to sensitive files, and malware (viruses, trojan horses, and worms).
+
+An IDS is composed of several components: Sensors which generate security events, a Console to monitor events and alerts and control the sensors, and a central Engine that records events logged by the sensors in a database and uses a system of rules to generate alerts from security events received. There are several ways to categorize an IDS depending on the type and location of the sensors and the methodology used by the engine to generate alerts. In many simple IDS implementations all three components are combined in a single device or appliance.
+
+In a network-based intrusion-detection system (NIDS), the sensors are located at choke points in the network to be monitored, often in the demilitarized zone (DMZ) or at network borders. The sensor captures all network traffic and analyzes the content of individual packets for malicious traffic. In systems, PIDS and APIDS are used to monitor the transport and protocols illegal or inappropriate traffic or constructs of language (say SQL). In a host-based system, the sensor usually consists of a software agent, which monitors all activity of the host on which it is installed. Hybrids of these two systems also exist.
+                                                                                                                                                                                                                                                                                                                                                                                                                                 	
+                                           	
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
